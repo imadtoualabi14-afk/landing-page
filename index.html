@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meowdoku: Brain Puzzle Games - Free Download</title>
+  <!-- Font Awesome for Device Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #eaf6ff;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 15px;
+      min-height: 100vh;
+    }
+
+    /* Container */
+    .container {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Header & Icon */
+    .app-icon {
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      margin-bottom: 15px;
+    }
+
+    /* Language Selector */
+    .language-box {
+      margin-bottom: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a5276;
+    }
+
+    .language-box select {
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid #00a8ff;
+      background: #ffffff;
+      color: #1a5276;
+      font-weight: 600;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    /* Instructions Box */
+    .instructions-card {
+      background: #ffffff;
+      border-left: 4px solid #00a8ff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 25px;
+    }
+
+    .instructions-card h2 {
+      font-size: 18px;
+      color: #0b5345;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .instructions-card ol {
+      margin-left: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .task-types {
+      border-top: 1px solid #e0e0e0;
+      padding-top: 12px;
+      margin-top: 10px;
+    }
+
+    .task-types h3 {
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: #2c3e50;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: #4a6572;
+    }
+
+    .note-text {
+      font-size: 12px;
+      color: #7f8c8d;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* Device Selection */
+    .device-section {
+      margin-bottom: 20px;
+    }
+
+    .device-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #1a5276;
+      margin-bottom: 12px;
+    }
+
+    .device-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .device-btn {
+      background: #ffffff;
+      border: 1.5px solid #00a8ff;
+      color: #00a8ff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .device-btn.active, .device-btn:hover {
+      background: #00a8ff;
+      color: #ffffff;
+    }
+
+    /* Arrow Icon */
+    .arrow-down {
+      font-size: 24px;
+      color: #ff3333;
+      margin-bottom: 15px;
+      animation: bounce 1.2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* Download CTA Button */
+    .download-btn {
+      background: #00a8ff;
+      color: #ffffff;
+      border: none;
+      width: 80%;
+      max-width: 300px;
+      padding: 14px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 168, 255, 0.4);
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #0086cc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- App Logo / Icon -->
+    <img src="https://via.placeholder.com/90x90/00a8ff/ffffff?text=Meowdoku" alt="Meowdoku Icon" class="app-icon">
+
+    <!-- Language Option -->
+    <div class="language-box">
+      <i class="fa-solid font-globe"></i> Choose Language:
+      <select>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </div>
+
+    <!-- Instructions Card -->
+    <div class="instructions-card">
+      <h2>💡 How to Download:</h2>
+      <ol>
+        <li>Select your device platform below.</li>
+        <li>Click the download button.</li>
+        <li>Complete 1 quick offer to unlock your game installation file.</li>
+      </ol>
+
+      <div class="task-types">
+        <h3>Task Types:</h3>
+        <div class="task-item">
+          <i class="fa-solid fa-download" style="color:#00a8ff;"></i>
+          <span>Download an app/game and open it for at least 30 seconds.</span>
+        </div>
+        <div class="task-item">
+          <i class="fa-solid fa-file-signature" style="color:#00a8ff;"></i>
+          <span>Complete a quick survey until you reach the confirmation page.</span>
+        </div>
+      </div>
+
+      <p class="note-text">Note: Once completed, your game file download will trigger automatically.</p>
+    </div>
+
+    <!-- Select Device Section -->
+    <div class="device-section">
+      <div class="device-title"><i class="fa-solid fa-mobile-screen-button"></i> Select Your Device:</div>
+      <div class="device-buttons">
+        <button class="device-btn active" onclick="selectDevice(this)"><i class="fa-brands fa-android"></i> Android</button>
+        <button class="device-btn" onclick="selectDevice(this)"><i class="fa-brands fa-apple"></i> iOS</button>
+        <button class="device-btn" onclick="selectDevice(this)"><i class="fa-solid fa-tablet-screen-button"></i> iPad</button>
+      </div>
+    </div>
+
+    <!-- Animated Down Arrow -->
+    <div class="arrow-down">
+      <i class="fa-solid fa-arrow-down"></i>
+    </div>
+
+    <!-- Action Button (Triggers your locker) -->
+    <button class="download-btn" onclick="triggerLocker()">Download Now</button>
+  </div>
+
+  <script>
+    function selectDevice(element) {
+      document.querySelectorAll('.device-btn').forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+    function triggerLocker() {
+      // Replace this with your Abdulemedia Content Locker trigger function or direct link
+      alert('Content locker loading...');
+    }
+  </script>
+
+</body>
+</html>
