@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meowdoku Mod – Free Download</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
+                  url('https://i.postimg.cc/qB2xmDrt/unnamed.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 25px 15px;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 550px;
+      width: 100%;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(14px) saturate(1.2);
+      -webkit-backdrop-filter: blur(14px) saturate(1.2);
+      border-radius: 24px;
+      padding: 28px 22px 32px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5),
+                  inset 0 1px 1px rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.20);
+    }
+
+    .app-icon {
+      width: 85px;
+      height: 85px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.30);
+      margin-bottom: 12px;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .game-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      margin-bottom: 2px;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-mod {
+      display: inline-block;
+      background: rgba(255, 71, 87, 0.85);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .language-box {
+      margin-bottom: 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+    }
+
+    .language-box select {
+      padding: 6px 14px;
+      border-radius: 30px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      color: #1a1a1a;
+      font-weight: 600;
+      margin-left: 6px;
+      cursor: pointer;
+      outline: none;
+      font-size: 13px;
+    }
+
+    .language-box select option {
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+
+    .instructions-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-left: 4px solid rgba(0, 168, 255, 0.8);
+      border-radius: 14px;
+      padding: 18px 20px;
+      text-align: left;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      margin-bottom: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .instructions-card h2 {
+      font-size: 17px;
+      color: #1e1e1e;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .instructions-card ol {
+      margin-left: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+    }
+
+    .instructions-card ol li::marker {
+      color: #0066cc;
+    }
+
+    .task-types {
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      padding-top: 12px;
+      margin-top: 10px;
+    }
+
+    .task-types h3 {
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: #1e1e1e;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+      letter-spacing: 0.3px;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: #1a1a1a;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+    }
+
+    .task-item i {
+      color: #0066cc;
+      margin-top: 2px;
+    }
+
+    .note-text {
+      font-size: 12px;
+      color: #1a1a1a;
+      margin-top: 10px;
+      font-style: italic;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      padding-top: 10px;
+    }
+
+    /* ── Device section ── */
+    .device-section {
+      margin-bottom: 16px;
+    }
+
+    /* ── New image style ── */
+    .device-preview-img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      border-radius: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .device-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a1a;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+      margin-bottom: 10px;
+    }
+
+    .device-title i {
+      margin-right: 6px;
+    }
+
+    .device-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .device-btn {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(4px);
+      border: 1.5px solid rgba(0, 0, 0, 0.10);
+      color: #1a1a1a;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+      font-size: 14px;
+    }
+
+    .device-btn i {
+      font-size: 16px;
+    }
+
+    .device-btn.active,
+    .device-btn:hover {
+      background: rgba(0, 168, 255, 0.35);
+      border-color: #00a8ff;
+      color: #1a1a1a;
+      box-shadow: 0 0 20px rgba(0, 168, 255, 0.15);
+    }
+
+    .arrow-down {
+      font-size: 24px;
+      color: #ff6b81;
+      margin-bottom: 14px;
+      animation: bounce 1.2s infinite;
+      filter: drop-shadow(0 2px 8px rgba(255, 50, 50, 0.3));
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, rgba(0, 168, 255, 0.85), rgba(0, 120, 210, 0.85));
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      width: 85%;
+      max-width: 280px;
+      padding: 14px 20px;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 60px;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(0, 100, 200, 0.4);
+      transition: all 0.25s ease;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .download-btn:hover {
+      transform: scale(1.02);
+      background: linear-gradient(135deg, rgba(0, 180, 255, 0.95), rgba(0, 130, 220, 0.95));
+      box-shadow: 0 8px 32px rgba(0, 120, 255, 0.5);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px 14px 24px;
+      }
+      .game-title {
+        font-size: 24px;
+      }
+      .device-btn {
+        padding: 6px 14px;
+        font-size: 13px;
+      }
+      .download-btn {
+        font-size: 16px;
+        padding: 12px 16px;
+        width: 90%;
+      }
+      .device-preview-img {
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="https://i.postimg.cc/GmM9R56d/123.png" alt="Meowdoku Icon" class="app-icon" />
+    <h1 class="game-title">Meowdoku</h1>
+    <span class="badge-mod">MOD VERSION</span>
+
+    <div class="language-box">
+      <i class="fa-solid fa-globe"></i>
+      <span id="lbl-lang">Choose Language:</span>
+      <select id="lang-select" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </div>
+
+    <div class="instructions-card">
+      <h2 id="inst-title">💡 How to Download Meowdoku Mod:</h2>
+      <ol>
+        <li id="inst-step1">Select your device platform below.</li>
+        <li id="inst-step2">Click the download button.</li>
+        <li id="inst-step3">Complete 1 quick verification task to unlock the mod installer.</li>
+      </ol>
+
+      <div class="task-types">
+        <h3 id="task-title">Task Types:</h3>
+        <div class="task-item">
+          <i class="fa-solid fa-download"></i>
+          <span id="task-1">Download an app/game and open it for 30 seconds.</span>
+        </div>
+        <div class="task-item">
+          <i class="fa-solid fa-file-signature"></i>
+          <span id="task-2">Complete a quick survey to reach the confirmation page.</span>
+        </div>
+      </div>
+
+      <p class="note-text" id="note-txt">Note: Once completed, your file download will start automatically.</p>
+    </div>
+
+    <!-- ─── Device Section with the new image above the title ─── -->
+    <div class="device-section">
+      <!-- New image placed here -->
+      <img src="https://i.postimg.cc/05nvXms9/Capture-d-ecran-2026-07-23-105245.png" alt="Device selection preview" class="device-preview-img">
+
+      <div class="device-title" id="device-title-lbl">
+        <i class="fa-solid fa-mobile-screen-button"></i> Select Your Device:
+      </div>
+      <div class="device-buttons">
+        <button class="device-btn active" onclick="selectDevice(this)">
+          <i class="fa-brands fa-android"></i> Android
+        </button>
+        <button class="device-btn" onclick="selectDevice(this)">
+          <i class="fa-brands fa-apple"></i> iOS
+        </button>
+        <button class="device-btn" onclick="selectDevice(this)">
+          <i class="fa-solid fa-tablet-screen-button"></i> iPad
+        </button>
+      </div>
+    </div>
+
+    <div class="arrow-down">
+      <i class="fa-solid fa-arrow-down"></i>
+    </div>
+
+    <button class="download-btn" id="dl-btn" onclick="triggerLocker()">Download Now</button>
+  </div>
+
+  <script>
+    // ─── Translations ──────────────────────────────────────────────
+    const translations = {
+      en: {
+        lblLang: "Choose Language:",
+        instTitle: "💡 How to Download Meowdoku Mod:",
+        instStep1: "Select your device platform below.",
+        instStep2: "Click the download button.",
+        instStep3: "Complete 1 quick verification task to unlock the mod installer.",
+        taskTitle: "Task Types:",
+        task1: "Download an app/game and open it for 30 seconds.",
+        task2: "Complete a quick survey to reach the confirmation page.",
+        noteTxt: "Note: Once completed, your file download will start automatically.",
+        deviceTitle: '<i class="fa-solid fa-mobile-screen-button"></i> Select Your Device:',
+        dlBtn: "Download Now"
+      },
+      fr: {
+        lblLang: "Choisir la langue:",
+        instTitle: "💡 Comment télécharger Meowdoku Mod:",
+        instStep1: "Sélectionnez votre appareil ci-dessous.",
+        instStep2: "Cliquez sur le bouton de téléchargement.",
+        instStep3: "Complétez 1 tâche de vérification rapide pour débloquer le mod.",
+        taskTitle: "Types de tâches:",
+        task1: "Téléchargez une application et ouvrez-la pendant 30 secondes.",
+        task2: "Remplissez un court sondage jusqu'à la page de confirmation.",
+        noteTxt: "Remarque: Une fois terminé, le téléchargement démarrera automatiquement.",
+        deviceTitle: '<i class="fa-solid fa-mobile-screen-button"></i> Choisissez votre appareil:',
+        dlBtn: "Télécharger"
+      },
+      es: {
+        lblLang: "Elegir idioma:",
+        instTitle: "💡 Cómo descargar Meowdoku Mod:",
+        instStep1: "Seleccione su dispositivo a continuación.",
+        instStep2: "Haga clic en el botón de descarga.",
+        instStep3: "Complete 1 tarea rápida de verificación para desbloquear el mod.",
+        taskTitle: "Tipos de tareas:",
+        task1: "Descargue una aplicación y ábrala durante 30 segundos.",
+        task2: "Complete una breve encuesta hasta llegar a la página de confirmación.",
+        noteTxt: "Nota: Una vez completado, la descarga comenzará automáticamente.",
+        deviceTitle: '<i class="fa-solid fa-mobile-screen-button"></i> Selecciona tu dispositivo:',
+        dlBtn: "Descargar Ahora"
+      },
+      de: {
+        lblLang: "Sprache wählen:",
+        instTitle: "💡 Wie man Meowdoku Mod herunterlädt:",
+        instStep1: "Wählen Sie unten Ihr Gerät aus.",
+        instStep2: "Klicken Sie auf den Download-Button.",
+        instStep3: "Schließen Sie 1 schnelle Bestätigungsaufgabe ab, um den Mod freizuschalten.",
+        taskTitle: "Aufgabenarten:",
+        task1: "Laden Sie eine App herunter und öffnen Sie sie 30 Sekunden lang.",
+        task2: "Füllen Sie eine kurze Umfrage bis zur Bestätigungsseite aus.",
+        noteTxt: "Hinweis: Nach Abschluss startet der Download automatisch.",
+        deviceTitle: '<i class="fa-solid fa-mobile-screen-button"></i> Wählen Sie Ihr Gerät:',
+        dlBtn: "Jetzt Herunterladen"
+      }
+    };
+
+    function changeLanguage(lang) {
+      const t = translations[lang];
+      if (!t) return;
+      document.getElementById("lbl-lang").innerText = t.lblLang;
+      document.getElementById("inst-title").innerText = t.instTitle;
+      document.getElementById("inst-step1").innerText = t.instStep1;
+      document.getElementById("inst-step2").innerText = t.instStep2;
+      document.getElementById("inst-step3").innerText = t.instStep3;
+      document.getElementById("task-title").innerText = t.taskTitle;
+      document.getElementById("task-1").innerText = t.task1;
+      document.getElementById("task-2").innerText = t.task2;
+      document.getElementById("note-txt").innerText = t.noteTxt;
+      document.getElementById("device-title-lbl").innerHTML = t.deviceTitle;
+      document.getElementById("dl-btn").innerText = t.dlBtn;
+    }
+
+    function selectDevice(element) {
+      document.querySelectorAll('.device-btn').forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+    function triggerLocker() {
+      window.location.href = "https://unlock-content.net/?e6f85b4";
+    }
+  </script>
+
+</body>
+</html>
